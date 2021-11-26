@@ -1,6 +1,6 @@
 # emergencybutton
 
-A new Flutter project.
+Application for automatic detection of current address with big emergency button to call 112.
 
 ## Getting Started
 

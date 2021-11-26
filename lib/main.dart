@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'EmergencyButton',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
@@ -118,13 +118,12 @@ class _HomepageState extends State<Homepage> {
             ),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue, // This is what you need!
+                  primary: Colors.blue,
                 ),
                 onPressed: () async {
                   Position position = await _getGeoLocationPosition();
                   MapsLauncher.launchCoordinates(
                       position.latitude, position.longitude);
-                  // GetAddressFromLatLong(position);
                 },
                 child: Text('Открыть карту'),
                 autofocus: false,
@@ -159,7 +158,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 label: Text('Вызвать 112'),
                 onPressed: () async {
-                  const number = '112'; //set the number here
+                  const number = '112'; //Can be cahnged to 911
                   bool? res = await FlutterPhoneDirectCaller.callNumber(number);
                 },
                 style: ElevatedButton.styleFrom(
@@ -167,14 +166,6 @@ class _HomepageState extends State<Homepage> {
                     borderRadius: new BorderRadius.circular(70.0),
                   ),
                 )),
-            // ElevatedButton(
-            //     onPressed: () async {
-            //       const number = '+79218790724'; //set the number here
-            //       bool? res = await FlutterPhoneDirectCaller.callNumber(number);
-            //     },
-            //     child: Text('Вызвать 112'),
-            //     autofocus: false,
-            //     clipBehavior: Clip.none)
           ],
         ),
       ),

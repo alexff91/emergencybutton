@@ -118,7 +118,8 @@ class _HomepageState extends State<Homepage> {
             ),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blue,
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
                 ),
                 onPressed: () async {
                   Position position = await _getGeoLocationPosition();

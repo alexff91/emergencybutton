@@ -41,7 +41,7 @@ class _HomepageState extends State<Homepage> {
     super.initState();
     // ignore: cancel_subscriptions
     StreamSubscription<Position> positionStream =
-        Geolocator.getPositionStream(desiredAccuracy: LocationAccuracy.best)
+        Geolocator.getPositionStream(locationSettings: const LocationSettings(accuracy: LocationAccuracy.best))
             .listen((Position position) {
       location =
           'Широта: ${position.latitude} , Долгота: ${position.longitude}';
@@ -85,7 +85,7 @@ class _HomepageState extends State<Homepage> {
     // When we reach here, permissions are granted and we can
     // continue accessing the position of the device.
     return await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.best);
+        locationSettings: const LocationSettings(accuracy: LocationAccuracy.best));
   }
 
   Future<void> GetAddressFromLatLong(Position position) async {
